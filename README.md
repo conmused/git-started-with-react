@@ -10,7 +10,7 @@ Even though this is a static seed, we can still benefit from some server-side go
 
 Prerendering not only allows for (limited) SEO on a static site, it helps speed up the initial load of your application. Given that the initial javascript (without gzip) is likely going to be over 150k, this is pretty critical to the User experience. Heavy use of webpack's require.ensure on non-critical functionality is recommended.
 
-The ```prerender.js``` file also provides a pattern for server side rendering, should you choose to upgrade your project to a full node stack. There is a server side seed in progress over at [https://github.com/conmused/react-server].
+The ```prerender.js``` file also provides a pattern for server side rendering, should you choose to upgrade your project to a full node stack. There is a server side seed in progress over [here](https://github.com/conmused/react-server).
 
 
 ## Installation
