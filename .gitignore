@@ -1,0 +1,36 @@
+*~
+# Build results
+
+.sass-cache/*
+*/.sass-cache/*
+assets/*
+dist/assets/*
+*.tmp
+.tmp/*
+
+dist/*
+*~
+
+# =========================
+# Windows detritus
+# =========================
+
+# Windows image file caches
+Thumbs.db
+thumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Mac detritus
+.DS_Store
+
+*/node_modules/*
+.node_modules/*
+node_modules/*
+
+
+npm-debug.log

@@ -1,0 +1,31 @@
+@import "../../variables.scss";
+
+.navigation-menu-item {
+  display: block;
+  font-size: 1em;
+  line-height: 1.416666667em;
+  padding: 1em;
+  text-decoration: none;
+  float: none;
+  border-top: 1px solid $dark-primary-color;
+  color: $light-primary-color;
+
+  &:hover,
+  &:active {
+    background: $dark-primary-color;
+    color: white;
+  }
+}
+
+.navigation-menu-item--active {
+  background: $dark-primary-color;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .navigation-menu-item {
+    float: left;
+    display:inline-block;
+    border-top: 0;
+  }
+}

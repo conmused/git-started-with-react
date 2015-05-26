@@ -1,0 +1,6 @@
+{
+  "name": "Navigation Menu Item",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./NavigationMenuItem.js"
+}

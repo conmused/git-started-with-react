@@ -1,0 +1,68 @@
+{
+  "name": "react-prototype",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Prototyping seed for react with webpack hot loader",
+  "main": "server.js",
+  "author": "Matthew Potter",
+  "contributors": [
+    "Matthew Potter <heymatthewoden@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [],
+  "dependencies": {},
+  "analyze": false,
+  "devDependencies": {
+    "amplify-store": "0.0.3",
+    "autoprefixer-loader": "^1.2.0",
+    "babel-core": "^4.7.0",
+    "babel-jest": "^4.0.0",
+    "babel-loader": "^4.2.0",
+    "bundle-loader": "^0.5.3",
+    "chalk": "^1.0.0",
+    "classnames": "^1.2.0",
+    "clean-webpack-plugin": "^0.1.3",
+    "compression-webpack-plugin": "^0.2.0",
+    "css-loader": "^0.9.1",
+    "es6-promise": "^2.0.1",
+    "extract-text-webpack-plugin": "^0.3.8",
+    "file-loader": "^0.8.1",
+    "html-webpack-plugin": "^1.4.0",
+    "jest-cli": "0.3.0",
+    "json-loader": "^0.5.1",
+    "jsx-loader": "^0.12.2",
+    "null-loader": "^0.1.1",
+    "react": "^0.13.1",
+    "react-document-title": "^1.0.2",
+    "react-hot-loader": "^1.2.3",
+    "react-router": "^0.13.2",
+    "react-tools": "^0.12.2",
+    "reflux": "^0.2.2",
+    "sass-loader": "0.4.2",
+    "style-loader": "^0.8.3",
+    "url-loader": "^0.5.5",
+    "webpack": "^1.7.3",
+    "webpack-dev-server": "^1.7.0"
+  },
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "jsx",
+    "es6"
+  ],
+  "engines": {
+    "node": ">=0.10"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/client/app/react/preprocessor.js",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/reflux"
+    ]
+  },
+  "scripts": {
+    "test": "jest",
+    "dist": "NODE_ENV=production webpack --config webpack.config.js; NODE_ENV=prerender webpack --config webpack.config.js;"
+  },
+  "bundleDependencies": []
+}

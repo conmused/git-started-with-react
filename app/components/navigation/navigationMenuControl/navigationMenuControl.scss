@@ -1,0 +1,73 @@
+@import "../../variables.scss";
+
+.navigation-menu-control {
+  display: inline-block;
+  margin: 1em;
+  float:left;
+}
+
+.navigation-menu-control__icon {
+  float: left;
+  content: '';
+  cursor: pointer;
+  color: white;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.navigation-menu-control__icon {
+  width: 1.41667em;
+}
+
+.navigation-menu-control__icon:after {
+  margin-top: 8px;
+}
+
+.navigation-menu-control__icon:before {
+  margin-bottom: 8px;
+}
+
+.navigation-menu-control__icon .navigation-menu-control__icon__inner {
+  margin-bottom: 8px 0;
+}
+
+.navigation-menu-control__icon:after,
+.navigation-menu-control__icon:before,
+.navigation-menu-control__icon .navigation-menu-control__icon__inner {
+  background-color: #fff;
+  content: '';
+  display: block;
+  height: 2px;
+  -moz-transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.navigation-menu-control__icon--active:before {
+  transform: translateY(10px) rotate(135deg);
+  -moz-transform: translateY(10px) rotate(135deg);
+  -webkit-transform: translateY(10px) rotate(135deg);
+}
+
+.navigation-menu-control__icon--active:after {
+  transform: translateY(-10px) rotate(-135deg);
+  -moz-transform: translateY(-10px) rotate(-135deg);
+  -webkit-transform: translateY(-10px) rotate(-135deg);
+}
+
+.navigation-menu-control__icon--active .navigation-menu-control__icon__inner {
+  -moz-transform: scale(0);
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+@media (min-width: 768px) {
+  .navigation-menu-control__icon {
+    display: inline-block;
+    float: left;
+  }
+
+  .navigation-menu-control {
+    display: none;
+  }
+}

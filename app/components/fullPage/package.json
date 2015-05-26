@@ -1,0 +1,6 @@
+{
+  "name": "FullPage",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./FullPage.js"
+}
