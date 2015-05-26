@@ -30,7 +30,7 @@ var makeIndex = function() {
 // when compile is finished, write stats.
 var makeStats = function() {
   this.plugin('done', function(stats) {
-    require('fs').writeFileSync(
+   fs.writeFileSync(
       './app/stats.json',
       JSON.stringify(stats.toJson()));
   });

@@ -2,7 +2,6 @@
 
 var chalk = require('chalk');
 var entry = require('./webpack/entry');
-var externals = require('./webpack/externals');
 var modules = require('./webpack/module');
 var output = require('./webpack/output');
 var plugins = require('./webpack/plugins');
@@ -20,7 +19,6 @@ var makeConfig = function() {
     target: target,
     module: modules,
     moduleDirectories: ['node_modules'],
-    externals: externals,
     output: output,
     resolve: resolve,
     plugins: plugins,

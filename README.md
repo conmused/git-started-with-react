@@ -4,7 +4,7 @@ Just a quick-start application for small projects, prototyping, and hackathons. 
 This seed also comes equipped with react-router for routing, and amplify-store for client session management.
 
 ## Prerendering
-Even though this is a static seed, we can still benefit from some server-side goodness. 
+Even though this is a static seed, we can still benefit from some server-side goodness.
 
 **Why prerender?**
 
@@ -26,7 +26,7 @@ npm install
 
 Run webpack in development mode, with webpack hot loader:
 ```
-npm start
+npm run serve
 ```
 
 Run webpack in production mode, prerendering index.html:
