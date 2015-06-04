@@ -2,12 +2,10 @@
 
 import React from 'react';
 import Page from '../page/';
-import store from 'amplify-store';
 
-class Home extends React.Component {
+export default class Home extends React.Component {
     displayName: 'Home';
     render() {
-      store('test','what' );
       return (
         <Page title="Home">
           <div className="page__container">
@@ -17,5 +15,3 @@ class Home extends React.Component {
       );
     }
 }
-
-export default Home;

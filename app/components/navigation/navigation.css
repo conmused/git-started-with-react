@@ -1,26 +1,26 @@
-@import "../variables.scss";
-@import "../clearfix.scss";
-
-.navigation {
-  background: $primary-color;
+.local[navigation] {
+  background: $primary_color;
   display: block;
   width: 100%;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   position: fixed;
   z-index: 100;
+  top:0;
 }
 
-.navigation__clearfix {
-  @include clearfix;
+.local[clearfix]:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.navigation__wrapper {
+.local[wrapper] {
   max-width: 960px;
   width: 100%;
   margin: auto;
 }
 
-.navigation__brand {
+.local[brand] {
   padding: 1em 1em 1em 0;
   line-height: 1.416666667em;
   float: left;
@@ -30,10 +30,11 @@
 }
 
 @media (min-width: 768px) {
-  .navigation{
-    position:relative;
+  .local[navigation] {
+    position: relative;
   }
-  .navigation__brand {
+
+  .local[brand] {
     padding: 1em 1em 1em 0;
     line-height: 1.416666667em;
     color: white;

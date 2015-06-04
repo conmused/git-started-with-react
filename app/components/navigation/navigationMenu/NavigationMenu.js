@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classNames';
-import './navigationMenu.scss';
+import styles from './navigationMenu.css';
 
-class NavigationMenu extends React.Component {
+export default class NavigationMenu extends React.Component {
   displayName: 'Navigation Menu';
   constructor(props){
     super(props);
@@ -15,14 +15,10 @@ class NavigationMenu extends React.Component {
     }
   }
   render(){
-    let classes = classNames({
-      'navigation-menu': true,
-      'navigation-menu--open': this.props.open
-    });
+    let classes = classNames(styles.navigationMenu, (!this.props.open || styles.navigationMenuOpen));
 
     return (
       <div className={classes}>
-        <div className="navigation-menu__icon"/>
         {this.props.children}
       </div>
     );
@@ -36,5 +32,3 @@ NavigationMenu.defaultProps = {
 NavigationMenu.propTypes = {
   open: React.PropTypes.bool
 };
-
-export default NavigationMenu;

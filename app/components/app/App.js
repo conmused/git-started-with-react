@@ -1,12 +1,11 @@
 'use strict';
+import './normalize.css';
+import './app.css';
 
 import React from 'react';
-import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 import Navigation from '../navigation/';
 import { RouteHandler } from 'react-router';
 
-import './normalize.scss';
-import './app.scss';
 
 class App extends React.Component{
     render() {
@@ -14,9 +13,7 @@ class App extends React.Component{
         return (
           <div>
             <Navigation/>
-            <ReactCSSTransitionGroup transitionName="route">
-              <RouteHandler/>
-            </ReactCSSTransitionGroup>
+            <RouteHandler/>
           </div>
         );
     }

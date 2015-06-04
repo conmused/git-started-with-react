@@ -1,52 +1,37 @@
 'use strict';
 
 var env = require('./utils').env;
-var path = require('path');
-
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var sassLoaders = [
-'css-loader',
-'autoprefixer-loader?browsers=last 2 version',
-'sass-loader?includePaths[]=' + path.resolve(__dirname, './app/components/'),
+var commonLoaders = [
+  { test: /\.js$/,
+    exclude: /node_modules/,
+    loader: 'babel-loader?stage=0',
+  },
+  { test: /\.png$/, loader: 'url-loader' },
+    // Copy precomposed image files over to assets path
+  { test: /.*precomposed\.png$/, loader: 'file-loader?name=images/[name].[ext]'},
+  { test: /\.jpg$/, loader: 'file-loader' },
+  {test: /\.json$/, loader: "json"}
 ];
-
 
 module.exports = env({
   develop: {
-    loaders:[
-    { test: /\.jsx?$/,
-      loaders: ['react-hot', 'babel'],
-      exclude: /node_modules/,
-    },
-    { test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$/,
-      loader: 'file-loader?name=[path][name].[ext]'
-    },
-    { test: /\.scss$/,
-      loaders: sassLoaders,
-      loader: ExtractTextPlugin.extract('style-loader', sassLoaders.join('!')),
-    }]
+    loaders: commonLoaders.concat(
+    { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader','css?localIdentName=[name]--[local]__[hash:base64:5]!postcss') }
+    )
   },
 
   production:{
-    loaders:[
-    { test: /\.jsx?$/,
-      exclude: /node_modules/,
-      loaders: ['babel']
-    },
-    { test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$/,
-      loader: 'file-loader?name=[path][name].[ext]'
-    },
-    { test: /\.scss$/,
-      loaders: sassLoaders,
-      loader: ExtractTextPlugin.extract('style-loader', sassLoaders.join('!')),
-    }]
+    loaders: commonLoaders.concat(
+    { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader','css?localIdentName=[hash:base64:5]!postcss') }
+    )
   },
 
   prerender: {
     loaders:[
     { test: /\.jsx?$/,
       exclude: /node_modules/,
-      loaders: ['babel']
+      loader: 'babel'
     },
     {
       test:  /\.json$/,
@@ -56,8 +41,8 @@ module.exports = env({
       loader: 'file-loader?name=[path][name].[ext]',
     },
     {
-      test: /\.scss$/,
-      loader: 'null-loader'
+      test: /\.css$/,
+      loader: 'css/locals?localIdentName=[hash:base64:5]!postcss'
     }
     ]
   },

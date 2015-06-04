@@ -1,5 +1,4 @@
 'use strict';
-require('es6-promise').polyfill();
 import React  from 'react';
 import Router from 'react-router';
 import Routes from './Routes';

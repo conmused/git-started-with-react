@@ -3,11 +3,10 @@ import React from 'react';
 import { Route, DefaultRoute, NotFoundRoute } from 'react-router';
 
 //Components
-import App from './components/app/';
-import Home from './components/home/';
-import PageOne from './components/pageOne/';
-import PageTwo from './components/pageTwo/';
-
+var App = require('./components/app/');
+var Home = require('react-proxy!./components/home/');
+var PageOne =  require('react-proxy!./components/pageOne/');
+var PageTwo = require('react-proxy!./components/pageTwo/');
 
 export default (
       <Route handler={ App } path="/">

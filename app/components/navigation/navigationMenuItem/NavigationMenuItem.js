@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import './navigationMenuItem.scss';
+import styles from './navigationMenuItem.css';
 
 class NavigationItem extends React.Component {
   displayName: 'NavigationItem';
@@ -18,9 +18,9 @@ class NavigationItem extends React.Component {
   render() {
     return(
       <Link
-        activeClassName="navigation-menu-item--active"
+        activeClassName={styles.itemActive}
         onClick={this.handleClick}
-        className="navigation-menu-item"
+        className={styles.item}
         brand={this.props.brand}
         to={this.props.linkTo}>
           {this.props.children}

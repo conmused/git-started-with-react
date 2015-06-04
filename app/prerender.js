@@ -7,7 +7,7 @@ import stats from './stats.json';
 
 const preRenderString = function() {
   let prerender = null;
-  Router.run(Routes, '/home', function (Handler) {
+  Router.run(Routes, '/', function (Handler) {
     const markup = React.renderToString(<Handler />);
     const html   = React.renderToStaticMarkup(<FullPage markup={markup} hash={stats.hash} />);
     prerender = '<!DOCTYPE html>' + html;

@@ -3,7 +3,7 @@
 import React from 'react';
 import Page from '../page/';
 
-class PageTwo extends React.Component {
+export default class PageTwo extends React.Component {
     displayName: 'pageTwo';
     render() {
         return (
@@ -15,5 +15,3 @@ class PageTwo extends React.Component {
         );
     }
 }
-
-export default PageTwo;

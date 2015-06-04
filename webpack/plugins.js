@@ -15,7 +15,6 @@ module.exports = env({
   develop: [
     //Clean out build directory
     new Clean(['/assets']),
-    //Create commons chunk
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
     //Hot reloader
     new webpack.HotModuleReplacementPlugin(),
@@ -23,19 +22,30 @@ module.exports = env({
     new webpack.NoErrorsPlugin(),
     //extract css text.
     new ExtractTextPlugin('[name].css'),
+    new webpack.DefinePlugin({
+      "global.GENTLY": false,
+     }),
   ],
 
   production:[
     //clean out assets directory.
     new Clean(['../dist/assets']), //Clean out build directory
     //hashed commons package.
-    new webpack.optimize.CommonsChunkPlugin('vendor', '[hash].vendor.js'),
+    new webpack.optimize.CommonsChunkPlugin('vendor', '[hash].[name].js'),
     new webpack.optimize.DedupePlugin(),
     //minify everything
+    new webpack.DefinePlugin(
+      { 'process.env': {
+        'NODE_ENV': JSON.stringify('production'),
+      }
+      }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
-      }
+      },
+      minimize: true,
+      output: {comments: false }
+
     }),
     //get hashed css
     new ExtractTextPlugin('[hash].[name].css'),
@@ -54,12 +64,15 @@ module.exports = env({
   prerender:[
     //Uglify
     new webpack.optimize.UglifyJsPlugin({
-      compress: { warnings: false  }
+      compress: { warnings: false },
     }),
     //use smaller react library.
     new webpack.DefinePlugin(
-      { 'process.env': { 'NODE_ENV': JSON.stringify('production') }
+      { 'process.env': {
+        'NODE_ENV': JSON.stringify('production'),
+        }
       }),
+    new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
     makeIndex,
   ],
 });

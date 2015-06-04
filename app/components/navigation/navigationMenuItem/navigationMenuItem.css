@@ -1,29 +1,31 @@
-@import "../../variables.scss";
 
-.navigation-menu-item {
+.local[item] {
   display: block;
   font-size: 1em;
   line-height: 1.416666667em;
   padding: 1em;
   text-decoration: none;
   float: none;
-  border-top: 1px solid $dark-primary-color;
-  color: $light-primary-color;
+  border-top: 1px solid $dark_primary_color;
+  color: $light_primary_color;
 
   &:hover,
   &:active {
-    background: $dark-primary-color;
+    background: $dark_primary_color;
     color: white;
   }
 }
 
-.navigation-menu-item--active {
-  background: $dark-primary-color;
+
+.local[item]
+
+.local[itemActive] {
+  background: $dark_primary_color;
   color: white;
 }
 
 @media (min-width: 768px) {
-  .navigation-menu-item {
+  .local[item] {
     float: left;
     display:inline-block;
     border-top: 0;

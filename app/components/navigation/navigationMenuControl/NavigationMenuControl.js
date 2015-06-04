@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classNames';
-import './navigationMenuControl.scss';
+import styles from './navigationMenuControl.css';
 
-class NavigationMenuControl extends React.Component {
+export default class NavigationMenuControl extends React.Component {
   displayName: 'NavigationMenuControl';
   constructor(props){
     super(props);
@@ -16,19 +16,14 @@ class NavigationMenuControl extends React.Component {
   }
 
   render() {
-    var classes = classNames({
-      'navigation-menu-control__icon': true,
-      'navigation-menu-control__icon--active': this.props.open
-    });
-
+    var classes = classNames(styles.icon, (!this.props.open || styles.iconActive));
     return(
-      <div className="navigation-menu-control">
+      <div className={styles.menuControl}>
         <div className={classes} onClick={this.handleClick}>
-          <div className="navigation-menu-control__icon__inner"/>
+          <div className={styles.iconInner}/>
         </div>
       </div>
     );
   }
 }
 
-export default NavigationMenuControl;

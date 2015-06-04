@@ -3,11 +3,7 @@ var env = require('./utils').env;
 
 module.exports = env({
   develop: {
-    vendor: [
-    'react',
-    'react-router',
-    'amplify-store'
-    ],
+    vendor:['react', 'react-router'],
     app: [
       'webpack-dev-server/client?http://0.0.0.0:3000', // WebpackDevServer host and port
       'webpack/hot/only-dev-server',
@@ -16,11 +12,7 @@ module.exports = env({
     },
 
   production: {
-      vendor: [
-      'react',
-      'react-router',
-      'amplify-store',
-      ],
+      vendor:['react', 'react-router'],
       app: [ './app/Index.js'],
     },
 

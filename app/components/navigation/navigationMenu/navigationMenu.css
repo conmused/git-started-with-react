@@ -1,6 +1,5 @@
-@import "../../variables.scss";
 
-.navigation-menu {
+.local[navigationMenu] {
   display:block;
   max-height:0;
   overflow: hidden;
@@ -8,7 +7,7 @@
   transition: opacity 0.25s ease;
 }
 
-.navigation-menu--open {
+.local[navigationMenuOpen] {
   opacity: 1;
   height: auto;
   max-height: 100%;
@@ -17,7 +16,8 @@
 }
 
 @media(min-width:768px){
-  .navigation-menu {
+  .local[navigationMenu] {
+    display:inline;
     opacity: 1;
     max-height: 100%;
   }
