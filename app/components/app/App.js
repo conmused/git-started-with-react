@@ -6,7 +6,6 @@ import React from 'react';
 import Navigation from '../navigation/';
 import { RouteHandler } from 'react-router';
 
-
 class App extends React.Component{
     render() {
 
