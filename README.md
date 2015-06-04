@@ -1,16 +1,18 @@
-# Git Started with React:
-Just a quick-start application for small projects, prototyping, and hackathons. Compiled with babel, and assumes development will happen with ES6. React is compiled with babel via Webpack and uses a hot loader. Styles are rendered via sass.
+# React-Client:
+Just a quick-start application for small projects, prototyping, and hackathons. Compiled with babel, and assumes development will happen with ES6 syntax. 
 
-This seed also comes equipped with react-router for routing, and amplify-store for client session management.
+- React is compiled with babel, via Webpack and is set up for hot-loading on development. Routing provided via react-router
+- Styles are rendered via PostCSS, locally to the module.
+
 
 ## Prerendering
 Even though this is a static seed, we can still benefit from some server-side goodness.
 
 **Why prerender?**
 
-Prerendering not only allows for (limited) SEO on a static site, it helps speed up the initial load of your application. Given that the initial javascript (without gzip) is likely going to be over 150k, this is pretty critical to the User experience. All routes beyond the index are rendered async.
+Prerendering allows for (limited) SEO on a static site, and when combined with async loading, it helps increase the percieved speed of your application.
 
-The ```prerender.js``` file also provides a pattern for server side rendering, should you choose to upgrade your project to a full node stack. There is a server side seed in progress over [here](https://github.com/conmused/react-server).
+The ```prerender.js``` file also provides a pattern for server side rendering, should you choose to upgrade your project to a full node stack. There is a server side seed in progress over [here](https://github.com/conmused/react-server), but currently lacks all the bells and whistles of this one.
 
 
 ## Installation
