@@ -13,12 +13,12 @@ module.exports = env({
     path:  require('path').resolve('./dist/assets'),
     publicPath:'./assets/',
     filename: '[hash].[name].js',
-    chunkFileName:'[hash].[name].js'
+    chunkFileName:'[name].js'
   },
 
   prerender:{
     filename: 'prerender.js',
-    path: require('path').resolve('./dist/assets/prerender'),
+    path: './dist',
     publicPath:'./assets/',
     /* IMPORTANT!
      * For prerendering, you must compile to UMD or CommonJS

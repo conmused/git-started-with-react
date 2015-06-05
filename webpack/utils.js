@@ -14,7 +14,7 @@ var env = function(config) {
 //when compile finished, write index.
 var makeIndex = function() {
   this.plugin("done", function(){
-    var prerender = require('../dist/assets/prerender/prerender.js');
+    var prerender = require('../dist/prerender.js');
     var location = './dist/index.html';
     fs.writeFile( location, prerender, function (err) {
       if (err) {
@@ -34,11 +34,14 @@ var makeStats = function() {
       './app/stats.json',
       JSON.stringify(stats.toJson({
                                   hash:true,
+                                  //TURN IT ALL OFF.
                                   version:false,
                                   timings:false,
                                   assets:false,
                                   chunks:false,
                                   chunkModules: false,
+                                  publicPath: false,
+                                  children:false,
                                   modules: false,
                                   cached: false,
                                   reasons: false,

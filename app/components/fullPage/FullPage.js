@@ -11,8 +11,7 @@ class FullPage extends React.Component {
           <title>React ProtoType v1.0</title>
           <meta name="description" content=""/>
           <meta name="viewport" content="width=device-width"/>
-          <link rel="stylesheet" href={"assets/"+this.props.hash+".app.css"}/>
-          <script id="initialProps"></script>
+          <style dangerouslySetInnerHTML={{__html: this.props.css}}/>
         </head>
         <body>
           <div id="app" dangerouslySetInnerHTML={{__html: this.props.markup}}/>

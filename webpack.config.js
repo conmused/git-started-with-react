@@ -15,9 +15,8 @@ var makeConfig = function() {
   console.log("\n" + new Array(80).join("\u2500"));
   console.log(chalk.white("Starting webpack configuation for:"), chalk.green.bold(process.env.NODE_ENV));
   console.log(new Array(80).join("\u2500") + "\n");
-
   return {
-    name: 'develop',
+    name: 'process.env.NODE_ENV',
     entry: entry,
     externals: externals,
     module: modules,
@@ -28,7 +27,6 @@ var makeConfig = function() {
       extensions: extensions,
     },
     modulesDirectories: ["web_modules", "node_modules"],
-
     target: target,
   };
 };
