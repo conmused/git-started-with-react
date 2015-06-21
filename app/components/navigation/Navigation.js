@@ -32,8 +32,8 @@ export default class Navigation extends React.Component {
             React Seed 1.0
           </Link>
         <NavigationMenu open={this.state.open} >
-          <NavigationMenuItem  onMenuToggle={this.closeMenu} linkTo="pageone">Page One</NavigationMenuItem>
-          <NavigationMenuItem onMenuToggle={this.closeMenu} linkTo="pagetwo">Page Two</NavigationMenuItem>
+          <NavigationMenuItem  onMenuToggle={this.closeMenu} linkTo="/pageone">Page One</NavigationMenuItem>
+          <NavigationMenuItem onMenuToggle={this.closeMenu} linkTo="/pagetwo">Page Two</NavigationMenuItem>
         </NavigationMenu>
         <div className={styles.clearfix}/>
       </div>

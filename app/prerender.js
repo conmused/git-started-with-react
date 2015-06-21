@@ -11,11 +11,10 @@ import stats from './stats.json';
 const css = require('!!css-loader!../dist/assets/' + stats.hash + '.app.css').toString();
 const preRenderString = function() {
   let prerender = null;
-  Router.run(Routes, '/', function (Handler) {
-    const markup = React.renderToString(<Handler />);
-    const html   = React.renderToStaticMarkup(<FullPage markup={markup} css={css} hash={stats.hash} />);
-    prerender = '<!DOCTYPE html>' + html;
-    });
+    Router.run(Routes, '/', function (Handler) {
+      var markup = React.renderToString(<Handler/>)//.replace(/href=\"/g,'href=\"#');
+      prerender = '<!DOCTYPE html>' +  React.renderToStaticMarkup(<FullPage markup={markup} css={css} hash={stats.hash} />);
+  });
   return prerender;
 };
 

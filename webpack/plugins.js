@@ -39,7 +39,7 @@ module.exports = env({
         'NODE_ENV': JSON.stringify('production'),
       }
       }),
-    new webpack.optimize.UglifyJsPlugin({
+      new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
       },
@@ -49,14 +49,6 @@ module.exports = env({
     }),
     //get hashed css
     new ExtractTextPlugin('[hash].[name].css'),
-    //GZip assets
-    new CompressionPlugin({
-      asset: "{file}.gz",
-      algorithm: "gzip",
-      regExp: /\.js$|\.html$|\.css$/,
-      threshold: 10240,
-      minRatio: 0.8
-    }),
     //Create Statsfile (needed for prerender);
     makeStats
   ],

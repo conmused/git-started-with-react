@@ -31,7 +31,7 @@ module.exports = env({
     loaders:[
     { test: /\.jsx?$/,
       exclude: /node_modules/,
-      loader: 'babel'
+      loader: 'babel-loader?stage=0',
     },
     {
       test:  /\.json$/,

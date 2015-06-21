@@ -2,7 +2,7 @@
 import React from 'react';
 import DocumentTitle from 'react-document-title';
 
-import styles from './page.css';
+import styles from 'react-proxy-loader!./page.css';
 
 export default class Page extends React.Component {
   render(){
