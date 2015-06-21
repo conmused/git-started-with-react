@@ -17,13 +17,15 @@ var commonLoaders = [
 module.exports = env({
   develop: {
     loaders: commonLoaders.concat(
-    { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader','css?localIdentName=[name]__[local]!postcss') }
+    { test: /\.css$/,
+      loader: ExtractTextPlugin.extract('style-loader','css?localIdentName=[name]__[local]!postcss') }
     )
   },
 
   production:{
     loaders: commonLoaders.concat(
-    { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader','css?localIdentName=[name]_[local]!postcss') }
+    { test: /\.css$/,
+      loader: ExtractTextPlugin.extract('style-loader','css?localIdentName=[name]_[local]!postcss') }
     )
   },
 

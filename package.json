@@ -72,7 +72,7 @@
   },
   "scripts": {
     "test": "jest",
-    "serve": "NODE_ENV=develop webpack --config webpack.config.js",
+    "build": "NODE_ENV=develop webpack --config webpack.config.js",
     "dist": "NODE_ENV=production webpack --config webpack.config.js; NODE_ENV=prerender webpack --config webpack.config.js;"
   },
   "bundleDependencies": []
